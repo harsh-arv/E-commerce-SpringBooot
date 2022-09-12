@@ -14,14 +14,16 @@ public class RegionServiceImpl implements RegionService{
     @Autowired
     public RegionDao regionDao;
 
-    @Override
-    public List<Region> getRegionList() {
-        return regionDao.queryRegion();
-    }
+
 
     @Override
     public List<Region> getRegionById(int id) {
         return regionDao.queryRegionById(id);
+    }
+
+    @Override
+    public List<Region> getRegionList() {
+        return regionDao.queryRegion();
     }
 
     @Transactional

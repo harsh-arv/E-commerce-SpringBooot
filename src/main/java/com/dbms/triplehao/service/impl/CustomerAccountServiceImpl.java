@@ -45,13 +45,15 @@ public class CustomerAccountServiceImpl implements CustomerAccountService
     }
 
     @Override
+    public int countCustomer() {
+        return customerAccountDao.queryCountCustomer();
+    }
+
+    @Override
     public List<CustomerAccount> searchCustomerAccount(String username)
     {
         return customerAccountDao.searchCustomerAccount(username);
     }
-    @Override
-    public int countCustomer() {
-        return customerAccountDao.queryCountCustomer();
-    }
+
 
 }

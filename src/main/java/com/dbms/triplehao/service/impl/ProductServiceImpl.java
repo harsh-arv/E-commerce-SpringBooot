@@ -12,13 +12,15 @@ import java.util.List;
 @Service
 public class ProductServiceImpl implements ProductService
 {
-    @Autowired
-    private ProductDao productDao;
 
     @Override
     public List<Product> getProductList() {
         return productDao.queryProduct();
     }
+    @Autowired
+    private ProductDao productDao;
+
+
 
     @Override
     public List<Product> getProductById(int productId) {
@@ -26,14 +28,15 @@ public class ProductServiceImpl implements ProductService
     }
 
     @Override
+    public int countProduct() {
+        return productDao.queryCountProduct();
+    }
+    @Override
     public List<Product> getProductByName(String name) {
         return productDao.queryProductByName(name);
     }
 
-    @Override
-    public int countProduct() {
-        return productDao.queryCountProduct();
-    }
+
 
     @Transactional
     @Override

@@ -32,16 +32,6 @@ public class ProductController
 //        return modelMap;
     }
 
-    @RequestMapping(value = "/getproductbyid", method  = RequestMethod.GET)
-    private String getProductById(HttpServletRequest request)
-    {
-        Map<String, Object> modelMap = new HashMap<String, Object>();
-        int ProductId = Integer.parseInt(request.getParameter("ProductId"));
-        List<Product> list = productService.getProductById(ProductId);
-        modelMap.put("product",list);
-        String json=JSON.toJSON(modelMap).toString();
-        return json;
-    }
 
     @RequestMapping(value = "/getproductbyname", method  = RequestMethod.GET)
     private String getProductByName(HttpServletRequest request)
@@ -55,6 +45,16 @@ public class ProductController
         String json=JSON.toJSON(modelMap).toString();
         return json;
     }
+    @RequestMapping(value = "/getproductbyid", method  = RequestMethod.GET)
+    private String getProductById(HttpServletRequest request)
+    {
+        Map<String, Object> modelMap = new HashMap<String, Object>();
+        int ProductId = Integer.parseInt(request.getParameter("ProductId"));
+        List<Product> list = productService.getProductById(ProductId);
+        modelMap.put("product",list);
+        String json=JSON.toJSON(modelMap).toString();
+        return json;
+    }
 
     @RequestMapping(value = "/sortproductbyprice", method = RequestMethod.GET)
     private String sortProductByPrice() {
@@ -64,14 +64,7 @@ public class ProductController
         String json = JSON.toJSON(modelMap).toString();
         return json;
     }
-    @RequestMapping(value = "/sortproductbypricedesc", method = RequestMethod.GET)
-    private String sortProductByPriceDesc() {
-        Map<String, Object> modelMap = new HashMap<>();
-        List<Product> list = productService.sortByProductDesc();
-        modelMap.put("productListByPriceDesc", list);
-        String json = JSON.toJSON(modelMap).toString();
-        return json;
-    }
+
 
     @RequestMapping(value = "/searchforcamera", method = RequestMethod.GET)
     private String searchForCamera() {
@@ -96,6 +89,15 @@ public class ProductController
         Map<String, Object> modelMap = new HashMap<>();
         List<Product> list = productService.searchForAcc();
         modelMap.put("searchforacc", list);
+        String json = JSON.toJSON(modelMap).toString();
+        return json;
+    }
+
+    @RequestMapping(value = "/sortproductbypricedesc", method = RequestMethod.GET)
+    private String sortProductByPriceDesc() {
+        Map<String, Object> modelMap = new HashMap<>();
+        List<Product> list = productService.sortByProductDesc();
+        modelMap.put("productListByPriceDesc", list);
         String json = JSON.toJSON(modelMap).toString();
         return json;
     }

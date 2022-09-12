@@ -5,6 +5,7 @@ import java.util.List;
 
 public interface SalesAccountService {
 
-    boolean addSalesAccount(SalesAccount salesAccount);
     List<SalesAccount> searchSalesAccount(String username);
+    boolean addSalesAccount(SalesAccount salesAccount);
+
 }

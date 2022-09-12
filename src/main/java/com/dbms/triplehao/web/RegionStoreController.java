@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@CrossOrigin(origins = "*", maxAge = 3600)       //允许后台做跨域传输
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/superadmin")
 public class RegionStoreController {

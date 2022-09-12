@@ -13,10 +13,12 @@ import java.util.List;
 public class RegionStoreServiceImpl implements RegionStoreService {
     @Autowired
     private RegionStoreDao regionStoreDao;
-
     @Override
     public List<RegionStore> getRegionStoreList() {
         return regionStoreDao.queryRegionStore();
     }
+
+
+
 
 }

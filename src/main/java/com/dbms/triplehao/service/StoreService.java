@@ -7,14 +7,17 @@ import java.util.List;
 public interface StoreService {
     List<Stores> getStoreList();
 
-    List<Stores> getStoreById(int storeId);
+
 
     List<Stores> getStoreByName(String address);
 
     boolean addStore(Stores stores);
+    List<Stores> getStoreById(int storeId);
 
-    boolean modifyStore(Stores stores);
 
     boolean deleteStore(int storeId);
+    boolean modifyStore(Stores stores);
+
+
 
 }

@@ -6,7 +6,8 @@ import java.util.List;
 
 public interface CustomerAccountService
 {
-    boolean addCustomerAccount(CustomerAccount customerAccount);
     List<CustomerAccount> searchCustomerAccount(String username);
+    boolean addCustomerAccount(CustomerAccount customerAccount);
+
     int countCustomer();
 }

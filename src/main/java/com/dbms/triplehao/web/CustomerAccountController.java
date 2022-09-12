@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-@CrossOrigin(origins = "*", maxAge = 3600)       //允许后台做跨域传输
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/superadmin")
 public class CustomerAccountController

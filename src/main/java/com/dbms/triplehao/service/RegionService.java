@@ -10,10 +10,11 @@ public interface RegionService {
 
     List<Region> getRegionById(int regionId);
 
+    boolean deleteRegion(int regionId);
     boolean addRegion(Region region);
 
     boolean modifyRegion(Region region);
 
-    boolean deleteRegion(int regionId);
+
 
 }
